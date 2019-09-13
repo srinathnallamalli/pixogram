@@ -1,0 +1,13 @@
+export class media {
+
+ 
+    mediaid:number;
+    title: string;
+    
+    description: string;
+    tags: string;
+    type: string;
+    userid:number;
+     
+     
+     }

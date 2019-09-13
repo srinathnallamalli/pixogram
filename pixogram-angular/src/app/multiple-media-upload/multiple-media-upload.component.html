@@ -1,0 +1,82 @@
+<div>
+    <nav id="header" class="navbar navbar-expand-md bg-dark navbar-dark fixes-top" >
+        <a class="navbar-brand" href="#">
+          <img id="logo" src="./assets/images/logo1.png" alt="logo" height="100px" width="100px" >
+        </a>
+        <a class="navbar-brand" href="#">Pixogram</a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/s1">Upload Media</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/s2" >My Media</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  routerLink="/s3">Follower/Following</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link"  routerLink="/s4">Account</a>
+            </li>           
+        </ul>
+        </div>
+      </nav>
+    </div>
+    
+<div class="container-fluid" style="margin-top: 70px;">
+    <div class="row">
+        <div class="col-lg-4" style="text-align: center">
+              
+                        <h1>Account</h1>
+                        <hr/> 
+                        <img id="avtar" src="./assets/images/userprofile.png" alt="Avtar" height="150px" width="150px" style="margin-bottom: 40px; margin-top: 10px;"/><br/> <br/>     
+                        <button id="singleMediaBtn" class="btn btn-success" routerLink="/s1/singlemedia" >Single Media Upload</button>
+                        <br>
+                        <br>
+                        <button id="multipleMediaBtn" class=" btn btn-success" routerLink="/s1/multiplemedia">Multiple Media Upload</button>
+                        
+        </div>
+        <div class="col-lg-8">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+   <div id="med" class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
+    <h1>Multiple Media Upload Page</h1>
+    <hr/>
+
+    <h3>Image Uploading Module</h3>
+    <div>
+    <input type="file" (change)="onFileChanged($event)">
+   
+    </div>
+     
+    <!-- upload image  -->
+     
+    <input type="button" (click)="onUpload()" value="upload">
+
+
+    <h3>Image Uploading Module</h3>
+    <div>
+    <input type="file" (change)="onFileChanged($event)">
+ 
+    </div>
+     
+    <!-- upload image  -->
+     
+    <input type="button" (click)="onUpload()" value="upload">
+
+
+    <h3>Image Uploading Module</h3>
+    <div>
+    <input type="file" (change)="onFileChanged($event)">
+    
+    </div>
+     
+    <!-- upload image  -->
+     
+    <input type="button" (click)="onUpload()" value="upload">

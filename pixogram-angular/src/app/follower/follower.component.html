@@ -1,0 +1,75 @@
+<div>
+        <nav id="header" class="navbar navbar-expand-md bg-dark navbar-dark fixes-top" >
+            <a class="navbar-brand" href="#">
+              <img id="logo" src="./assets/images/logo1.png" alt="logo" height="100px" width="100px" >
+            </a>
+            <a class="navbar-brand" href="#">Pixogram</a>
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/s1">Upload Media</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" routerLink="/s2" >My Media</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link"  routerLink="/s3">Follower/Following</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link"  routerLink="/s4">Account</a>
+                </li>           
+            </ul>
+            </div>
+          </nav>
+        </div>
+<ul style="float: right;margin-top: 30px;margin-right: 15px;" class="list-inline">
+    
+        <button type="button" class="btn btn-success btn-block" routerLink="/followers">Followers</button>    
+</ul>
+<hr/>
+<div class="container-fluid" style="margin-top: 60px;">
+  
+   
+            <div class="col-12 col-md-12 col-lg-3 col-xl-3" *ngFor="let userinfo of userinfo1;let i=index;" >
+                <div class="card text-dark  mb-3 animated"  id="card1">
+                        <div class="card-body img-center">
+                            
+                                <table class="table table-style" style="text-align: center;" >
+                                        <tr>
+                                            <td>
+                                                <i class="fa fa-heart"></i> 21
+                                            </td>
+                                            <td>
+                                                <i class="fa fa-heart fa-rotate-180"></i> 5
+                                            </td>
+                                            <td>
+                                                <i class="fa fa-comments"></i> 15
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>
+                                                   <h3> {{userinfo.username}}</h3>
+                                                </td>
+                                              
+                                            </tr>
+                                       
+                                    </table>
+                            <img src="./assets/images/follow.png" width="200" height="200" style="margin-left: 100px;">
+                        </div>
+                        <div class="card-footer">
+                                <button type="button" class="btn btn-success btn-block" (click)="followuser(userinfo.id)">Follow</button>
+                                
+                            </div>
+                </div>
+            </div>
+
+
+
+
+       
+</div>
+

@@ -1,0 +1,64 @@
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-6">
+                <h1>Register</h1>
+                <hr>
+                <form [formGroup]="rForm" #userForm="ngForm">  
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                    <label for="">Username</label>
+                                    <input type="text" name="" [(ngModel)]="user.username" id="" class="form-control" formControlName="username" [class.is-invalid]="rForm.get('username').touched && rForm.get('username').invalid ">
+                                    <small class="text-danger"[class.d-none]="rForm.get('username').valid || rForm.get('username').untouched">Please enter username</small>
+                                   </div>    
+                        </div>  
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                    <label for="">Password</label>
+                                    <input type="password" name="" id="" [(ngModel)]="user.password" class="form-control" formControlName="password" [class.is-invalid]="rForm.get('password').touched && rForm.get('password').invalid ">
+            <div *ngIf="rForm.get('password').invalid && rForm.get('password').touched">
+                <small class="text-danger" *ngIf="rForm.get('password').errors.required">Please Enter Password</small>
+                <small class="text-danger" *ngIf="rForm.get('password').errors.minlength">Password should be minimum 3 letters</small>
+                <small class="text-danger" *ngIf="rForm.get('password').errors.maxlength">Password should be maximum 10 letters</small>
+            </div>
+                            </div>
+                        </div>   
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                    <label for="">Repeat Password</label>
+                                    <input type="password" name="" id="" class="form-control" formControlName="repeatpassword" [class.is-invalid]="rForm.get('repeatpassword').touched && rForm.get('repeatpassword').invalid ">
+                                    <div *ngIf="rForm.get('repeatpassword').invalid && rForm.get('repeatpassword').touched">
+                                    <small class="text-danger" *ngIf="rForm.get('repeatpassword').errors.required">Please Enter Password</small>
+                                    </div>
+                            </div>
+                        </div>  
+                        <div class="form-group row">
+                            <div class="col-md-12">
+                                    <label for="">Email</label>
+                                    <input type="email" name="" id="" [(ngModel)]="user.email" class="form-control" formControlName="email" [class.is-invalid]="rForm.get('email').touched && rForm.get('email').invalid ">
+                                    
+                                    <div *ngIf="rForm.get('email').invalid && rForm.get('email').touched">
+                                        <small class="text-danger" *ngIf="rForm.get('email').errors.required">Please Enter Email</small>
+                                        <small class="text-danger" *ngIf="rForm.get('email').errors.email">Please Enter correct format of Email</small>
+                                    </div>
+                            </div>
+                        </div>  
+                        <br>
+                        
+                        <div class="form-group row">
+                                <div class="col-md-12">
+                                        <button class="btn btn-primary" (click)="createUser()" type="submit" >Register</button>   
+                                  </div>
+                        </div>
+                     
+                     </form>
+        </div>
+        <div class="col-md-3">
+
+        </div>
+    </div>
+</div>
+    

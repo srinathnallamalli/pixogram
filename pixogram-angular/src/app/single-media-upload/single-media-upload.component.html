@@ -1,0 +1,108 @@
+<div>
+    <nav id="header" class="navbar navbar-expand-md bg-dark navbar-dark fixes-top" >
+        <a class="navbar-brand" href="#">
+          <img id="logo" src="./assets/images/logo1.png" alt="logo" height="100px" width="100px" >
+        </a>
+        <a class="navbar-brand" href="#">Pixogram</a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/s1">Upload Media</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/s2" >My Media</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  routerLink="/s3">Follower/Following</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link"  routerLink="/s4">Account</a>
+            </li>           
+        </ul>
+        </div>
+      </nav>
+    </div>
+    
+<div class="container-fluid" style="margin-top: 70px;">
+    <div class="row">
+        <div class="col-lg-4" style="text-align: center">
+              
+                        <h1>Account</h1>
+                        <hr/> 
+                        <img id="avtar" src="./assets/images/userprofile.png" alt="Avtar" height="150px" width="150px" style="margin-bottom: 40px; margin-top: 10px;"/><br/> <br/>     
+                        <button id="singleMediaBtn" class="btn btn-success" routerLink="/s1/singlemedia" >Single Media Upload</button>
+                        <br>
+                        <br>
+                        <button id="multipleMediaBtn" class=" btn btn-success" routerLink="/s1/multiplemedia">Multiple Media Upload</button>
+                        
+        </div>
+        <div class="col-lg-8">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+   
+    <div id="med" class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
+    <h1>Single Media Upload Page</h1>
+    <hr/>
+
+    <h3>Image Uploading Module</h3>
+    <div>
+    <input type="file" (change)="onFileChanged($event)">
+    <img [src]="imgURL" height="200" *ngIf="imgURL">
+    </div>
+     
+    <!-- upload image  -->
+     
+    <input type="button" (click)="onUpload()" value="upload">
+    
+    
+    
+
+
+   <!-- <table class="table table-borderless ml-3 animated">
+        
+          <tbody>
+              <tr>
+
+                <th>Browse</th>
+                <td><input class="btn btn-success" type="file" name="file"></td>
+                <td><button class="bt btn btn-success">Upload</button></td>
+                <td style="border: 1px solid black; margin-left: 10px;" rowspan="5">
+                    <div class="form-group files color" >
+                    <label>Upload Your File </label>
+                    <input type="file" class="form-control">
+                  </div></td>
+              </tr>
+              <tr>
+                <th>Title</th>
+                <td colspan="2"><input class="form-control" type="text" placeholder="Title Here"></td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td colspan="2"><textarea style="resize: none;" class="form-control" placeholder="Description Here"></textarea></td>
+              </tr>
+              <tr>
+                    <th>Tags</th>
+                    <td colspan="2"><input class="form-control" type="text"></td>
+                </tr>
+                  <tr>
+                    <th>Effects</th>
+                     <td colspan="2">
+                            <ul class="list-inline">
+                                    <li class="list-inline-item"><a href="#">Sepia</a></li>
+                                    <li class="list-inline-item"><a href="#">Grey</a></li>
+                                    <li class="list-inline-item"><a href="#">Brightness</a></li>
+                                    <li class="list-inline-item"><a href="#">Contrast</a></li>
+                            </ul>
+                     </td>
+                </tr>
+            </tbody>
+          </table>
+        -->
+        
+</div>
